@@ -16,7 +16,7 @@ function Lists({ list }) {
   };
 
   // Фильтрация продуктов по имени
-  const filteredProducts = products.filter((product) =>
+  list = list.filter((product) =>
     product.name.toLowerCase().includes(value.toLowerCase())
   );
 
@@ -38,7 +38,7 @@ function Lists({ list }) {
         className="search-input"
       />
       <div className="product-list">
-        {filteredProducts.map((product) => (
+        {list.map((product) => (
           <div className="product-card" key={product.id}>
             <Link to={`/products/${product.id}`} className="product-link">
               <img
